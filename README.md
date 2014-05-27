@@ -5,7 +5,7 @@ CI pipeline for Chef cookbook development.  See
 [the accompanying blog post](http://www.cryptocracy.com/blog/2014/01/03/cooking-with-jenkins-test-kitchen-and-docker/)
 for details and commentary.
 
-You can also define new jobs on the vagrant file or on a wrapper cookbook.
+You can also define new jobs on the [vagrant file](https://gist.github.com/jespada/e79bc5fb3f3e7e5dcb24) or on a wrapper cookbook.
 
 # Requirements
 
