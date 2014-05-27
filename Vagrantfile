@@ -82,9 +82,19 @@ Vagrant.configure("2") do |config|
     chef.json = {
       "docker" => {
         "image_cmd_timeout" => 1000
+      },
+      "cooking-with-jenkins" => {
+        "jobs" => {
+          "tmux-cookbook" => {
+            "repository" => "https://github.com/jespada/tmux-cookbook.git",
+            "branch" => "master",
+            "foodcritic" => true,
+            "chefspec" => false,
+            "kitchen" => true
+          }
+        }
       }
     }
-
     chef.run_list = [
         "recipe[cooking-with-jenkins::default]"
     ]
