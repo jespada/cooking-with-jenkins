@@ -14,4 +14,4 @@ depends 'jenkins', '~> 1.2.0'
 depends 'git', '~> 2.5'
 
 # We'll run integration tests using docker
-depends 'docker', '~> 0.20'
+depends 'docker', '~> 0.34.2'

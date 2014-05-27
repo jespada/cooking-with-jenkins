@@ -6,7 +6,7 @@
 # job definitions.
 #
 # Copyright (C) 2013 Zachary Stevens
-# 
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -33,13 +33,18 @@ jenkins_plugin "ansicolor"
 # installed into a job's workspace before running any commands.  We
 # use it to override the test-kitchen configuration to use docker
 # instead of vagrant.
-cookbook_file "#{node[:jenkins][:server][:home]}/custom-config-files.xml" do
+
+template "custom_config_files" do
+  path "#{node[:jenkins][:server][:home]}/custom-config-files.xml"
+  source "custom-config-files.xml.erb"
   owner "jenkins"
   group "jenkins"
   mode "0644"
   notifies :restart, "service[jenkins]"
 end
+
 jenkins_plugin "token-macro"
+
 jenkins_plugin "config-file-provider" do
   version "2.7"
   action :install

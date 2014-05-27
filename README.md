@@ -5,9 +5,11 @@ CI pipeline for Chef cookbook development.  See
 [the accompanying blog post](http://www.cryptocracy.com/blog/2014/01/03/cooking-with-jenkins-test-kitchen-and-docker/)
 for details and commentary.
 
+You can also define new jobs on the vagrant file or on a wrapper cookbook.
+
 # Requirements
 
-Ubuntu 13.04 is the only supported system.
+Ubuntu 14.04 is the only supported system.
 
 To use the included Vagrantfile, you'll need Vagrant with the
 vagrant-berkshelf and vagrant-omnibus plugins installed. It should
@@ -29,6 +31,7 @@ didn't bother me enough to add the necessary hackery.
 Click "Build Now" on each job and you'll see them work correctly.
 
 # Attributes
+* `node['cooking-with-jenkins']['jobs']`- hash where keys are jenkin job names. See attribute file for an example
 
 # Recipes
 
